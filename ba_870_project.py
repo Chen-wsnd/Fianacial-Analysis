@@ -65,22 +65,22 @@ if st.button("🔍 Classify Trade"):
     angles += angles[:1]
 
    # Setup figure and axis
-   fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
-   fig.patch.set_facecolor('#f9f9f9')  # Light background
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+    fig.patch.set_facecolor('#f9f9f9')  # Light background
 
    # Plot
-   ax.plot(angles, values, color='#FF4B4B', linewidth=2.5, linestyle='-', marker='o', markersize=6)
-   ax.fill(angles, values, color='#FF4B4B', alpha=0.3)
-
+    ax.plot(angles, values, color='#FF4B4B', linewidth=2.5, linestyle='-', marker='o', markersize=6)
+    ax.fill(angles, values, color='#FF4B4B', alpha=0.3)
+ 
    # Style axes
-   ax.set_facecolor('#ffffff')  # White background
-   ax.set_xticks(angles[:-1])
-   ax.set_xticklabels(labels, fontsize=12, fontweight='bold')
-   ax.set_yticklabels([])
-   ax.grid(color='gray', linestyle='dashed', alpha=0.4)
-   ax.spines['polar'].set_visible(False)
+    ax.set_facecolor('#ffffff')  # White background
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels, fontsize=12, fontweight='bold')
+    ax.set_yticklabels([])
+    ax.grid(color='gray', linestyle='dashed', alpha=0.4)
+    ax.spines['polar'].set_visible(False)
 
    # Title
-   ax.set_title("Component Breakdown Radar", y=1.1, fontsize=16, fontweight='bold', color='#333333')
+    ax.set_title("Component Breakdown Radar", y=1.1, fontsize=16, fontweight='bold', color='#333333')
 
-st.pyplot(fig)
+    st.pyplot(fig)
