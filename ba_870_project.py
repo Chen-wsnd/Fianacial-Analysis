@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import numpy as np
+import matplotlib.pyplot as plt
 import streamlit as st
 
 st.set_page_config(page_title="Insider Trade Suspicion Scorer", layout="centered")
