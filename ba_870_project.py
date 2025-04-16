@@ -59,17 +59,28 @@ if st.button("🔍 Classify Trade"):
     # --- Radar chart ---
     labels = ['Trade Size', 'Reporting Speed', 'Exec Level', '10b5-1 Plan', 'Past Behavior']
     values = [size_pct, speed_score, high_level_score, plan_flag_score, past_avg_score]
-    values += values[:1]  # Complete loop
+    values += values[:1]  # Loop back to start
 
     angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
     angles += angles[:1]
 
-    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
-    ax.plot(angles, values, color='red', linewidth=2)
-    ax.fill(angles, values, color='red', alpha=0.25)
-    ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(labels)
-    ax.set_yticklabels([])
-    ax.set_title("📊 Component Breakdown Radar", y=1.08)
+   # Setup figure and axis
+   fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+   fig.patch.set_facecolor('#f9f9f9')  # Light background
 
-    st.pyplot(fig)
+   # Plot
+   ax.plot(angles, values, color='#FF4B4B', linewidth=2.5, linestyle='-', marker='o', markersize=6)
+   ax.fill(angles, values, color='#FF4B4B', alpha=0.3)
+
+   # Style axes
+   ax.set_facecolor('#ffffff')  # White background
+   ax.set_xticks(angles[:-1])
+   ax.set_xticklabels(labels, fontsize=12, fontweight='bold')
+   ax.set_yticklabels([])
+   ax.grid(color='gray', linestyle='dashed', alpha=0.4)
+   ax.spines['polar'].set_visible(False)
+
+   # Title
+   ax.set_title("Component Breakdown Radar", y=1.1, fontsize=16, fontweight='bold', color='#333333')
+
+   st.pyplot(fig)
