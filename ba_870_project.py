@@ -13,7 +13,7 @@ Original file is located at
 
 import pandas as pd
 import numpy as np
-insiders = pd.read_csv('/content/WRDS_Insiders.csv')
+insiders = pd.read_csv('WRDS_Insiders.csv') 
 insiders.head()
 
 insiders.info()
