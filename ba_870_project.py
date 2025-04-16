@@ -83,4 +83,4 @@ if st.button("🔍 Classify Trade"):
    # Title
    ax.set_title("Component Breakdown Radar", y=1.1, fontsize=16, fontweight='bold', color='#333333')
 
-   st.pyplot(fig)
+st.pyplot(fig)
