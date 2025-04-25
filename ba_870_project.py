@@ -7,6 +7,7 @@ st.set_page_config(page_title="Insider Trade Suspicion Scorer", layout="centered
 
 st.title("📊 Insider Trade Suspicion Scorer")
 st.markdown("Enter trade details below to get a suspicion score and classification.")
+st.markdown("<div style='position: absolute; top: 10px; left: 10px; font-size: 12px; color: gray;'>Created by Mishil Trivedi and Junhan Chen</div>", unsafe_allow_html=True)
 
 # User input fields
 trade_size = st.number_input("💰 Trade Value (in USD)", min_value=0.0, step=1000.0)
